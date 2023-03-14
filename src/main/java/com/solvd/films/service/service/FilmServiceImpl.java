@@ -33,8 +33,12 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public Mono<Film> update(Film film) {
-        return filmRepository.save(film);
+    public Mono<Film> update(Long id, Integer amount) {
+        Mono<Film> filmFromDB = findById(id);
+        return  filmFromDB.map(filmUpdated -> {
+            filmUpdated.setPlaces(filmUpdated.getPlaces() - amount);
+            return filmUpdated;
+        }).flatMap(filmRepository::save);
     }
 
     @Override
