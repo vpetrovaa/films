@@ -13,5 +13,6 @@ create table if not exists films
 	genre varchar(45) not null,
 	showing_date timestamp not null,
 	price real not null,
+	places int not null,
 	primary key (id)
 );
