@@ -12,7 +12,7 @@ public interface FilmService {
 
     Mono<Film> findById(Long id);
 
-    Mono<Film> update(Film film);
+    Mono<Film> update(Long id, Integer amount);
 
     Mono<Integer> getFreePlacesById(Long id);
 

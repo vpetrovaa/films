@@ -37,10 +37,9 @@ public class FilmController {
         return films.map(filmMapper::entityToDto);
     }
 
-    @PutMapping
-    public Mono<FilmDto> update(@RequestBody @Validated FilmDto filmDto) {
-        Film filmMapped = filmMapper.dtoToEntity(filmDto);
-        Mono<Film> film = filmService.update(filmMapped);
+    @PutMapping("/{id}/{amount}")
+    public Mono<FilmDto> update(@PathVariable("id") Long id, @PathVariable("amount") Integer amount) {
+        Mono<Film> film = filmService.update(id, amount);
         return film.map(filmMapper::entityToDto);
     }
 
