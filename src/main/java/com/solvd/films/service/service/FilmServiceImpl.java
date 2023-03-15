@@ -42,6 +42,15 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
+    public Mono<Film> updateStatus(Long id) {
+        Mono<Film> filmFromDB = findById(id);
+        return  filmFromDB.map(filmUpdated -> {
+            filmUpdated.setIsSold(true);
+            return filmUpdated;
+        }).flatMap(filmRepository::save);
+    }
+
+    @Override
     public Mono<Integer> getFreePlacesById(Long id) {
         return findById(id).flatMap(film -> Mono.just(film.getPlaces()));
     }

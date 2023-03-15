@@ -33,4 +33,7 @@ public class FilmDto {
     @NotNull(message = "Places cant be null")
     private Integer places;
 
+    @NotNull
+    private Boolean isSold;
+
 }

@@ -18,3 +18,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://${EUREKA_HOST}:8761/eureka
+
+kafka:
+  port: ${KAFKA_PORT}
+  group: groupId
+  topic: cinema
