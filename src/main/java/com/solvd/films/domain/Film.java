@@ -26,4 +26,6 @@ public class Film {
 
     private Integer places;
 
+    private Boolean isSold;
+
 }

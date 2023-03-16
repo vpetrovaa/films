@@ -14,5 +14,6 @@ create table if not exists films
 	showing_date timestamp not null,
 	price real not null,
 	places int not null,
+	isSold boolean not null,
 	primary key (id)
 );

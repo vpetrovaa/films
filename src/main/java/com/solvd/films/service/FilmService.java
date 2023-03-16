@@ -14,6 +14,8 @@ public interface FilmService {
 
     Mono<Film> update(Long id, Integer amount);
 
+    Mono<Film> updateStatus(Long id);
+
     Mono<Integer> getFreePlacesById(Long id);
 
 }
