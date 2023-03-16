@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @RequiredArgsConstructor
 @Getter
 @ConfigurationProperties(prefix = "kafka")
-public class KfProperty {
+public class KfProperties {
 
     private final String port;
     private final String group;
